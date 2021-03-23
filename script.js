@@ -241,7 +241,7 @@ master();
 
 let birds = 
     {
-        name: ["tui", "korimako (bell bird)","hihi (stitch bird)","kokako","kereru"],
+        name: ["tui", "korimako (bellbird)","hihi (stitch bird)","kokako","kererū"],
         thumbnail: ["img/tui.png","img/bellBird.png","img/stitchBird.png","img/kokako.png","img/kereru.png"],
         audio:["sounds/bird-calls/Tui.mp3","sounds/bird-calls/Korimako.mp3","sounds/bird-calls/Hihi_stichbird.mp3","sounds/bird-calls/Kokako.mp3","sounds/bird-calls/Kereru.mp3"]
     };
