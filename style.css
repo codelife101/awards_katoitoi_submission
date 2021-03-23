@@ -1,0 +1,948 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    background:#1a1a18;
+    overflow: none;
+    scroll-behavior: smooth;
+    color: #f9f9f9;
+    
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
+html{
+    font-size: 65.5%;
+}
+.overflow{
+    overflow: hidden;
+}
+h1, h2, h3{
+    /* font-family: 'Gothic A1', sans-serif; */
+    letter-spacing: 2px;
+}
+p{
+    font-family: 'Song Myung', serif;
+    font-size:1.4rem;
+}
+button{
+    background: transparent;
+    border: none;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+}
+button:hover{
+    cursor: pointer;
+}
+button:focus {outline:0;}
+h1{
+    color: #fbf7ed;
+    font-size: 4.6rem;
+    letter-spacing: 0.2;
+    line-height: 7.4rem;
+}
+input[type=range]{
+    -webkit-appearance: none;
+    background: transparent;
+    background: #f9f9f9;
+    height: 1rem;
+}
+input[type=range]:focus{
+    outline: none;
+}
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height:4rem;
+    width: 3rem;
+    background: url(./img/robot.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.brushSize input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height:3rem;
+    width: 3rem;
+    background: url(./img/bballmouse.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#loadingScreen{
+    width: 100vw;
+    height:100vh;
+    background: #1a1a18;
+    /* position: absolute; */
+    position: -webkit-sticky;
+  position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+.loadingContainer{
+    width: 40rem;
+    height: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loadingChild{
+    height:20%;
+    width: 20%;
+    position: relative;
+}
+.circle{
+    border-radius: 180px;
+    background: #f9f9f9;
+}
+.square{
+    background: #f9f9f9;
+}
+
+.homeContentContainer{
+    height: 100vh;
+    width: 100vw;
+}
+.projectContentContainer{
+    height: 100vh;
+    width: 100vw;
+}
+
+.nav-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 5%;
+    border-right:2px solid #f9f9f9 ;
+    z-index: 21;
+    display:flex;
+    align-items: center ;
+    justify-content: space-between;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 2rem;
+    /* uncomment/ commentout for dev */
+    transform: translateX(-100px);
+}
+.nav-header h3{
+    color:#f9f9f9;
+    font-size: 18px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg);    
+    transform:rotate(-90deg);
+        
+}
+.burger{
+    cursor:pointer;   
+}
+.line1, .line2{
+    width: 2rem;
+    height: 0.3rem;
+    margin: 0.4rem;
+    background: #f9f9f9;
+    pointer-events:none;
+}
+.nav-bar{
+    position: fixed;
+    top: 0;
+    right:0;
+    width: 100%;
+    height:100%;
+    background: #f9f9f9;
+    z-index: 20;
+    opacity: 1;
+    clip-path: circle(50px at -20% -100%);
+    -webkit-clip-path: circle(50px at -20% -100%);
+}
+.navLinks{
+    background: url("./img/navBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 5%;
+}
+
+/* end of navigation bar */
+
+/* start of home info */
+.homeInfoMaster, .projectInfoMaster{
+    width: 95%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+.projectInfoMaster{
+    flex-direction: column;
+
+}
+.homeLeftContainer{
+    height: 100%;
+    width: 55%;
+    background: url("./img/homeBg.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 20%;
+    position: relative;
+    padding-left: 8%;
+}
+.homeLeftContainer p{
+    position: absolute;
+    bottom: 0;
+    margin-bottom:10%;
+    color: #f9f9f9;
+    font-size: 14px;
+    width: 45ch;
+    letter-spacing: 2px;
+    line-height: 22px;
+}
+
+.homeRightContainer{
+    height: 100%;
+    width: 45%;
+    padding-top: 15%;
+    display: flex;
+    flex-direction: column;
+}
+.homeRightContainer h1{
+    font-size: 56px;
+    letter-spacing: 2px;
+    margin-left: 2%;
+    width: 30ch;
+    white-space: nowrap;
+    /* uncomment / commentout for dev */
+    transform: translateY(70px);
+}
+.squareContainer{
+    margin-top: 5%;
+    height: 70%;
+    width: 70%;
+    display: flex;
+    position: relative;
+}
+.squareWrapVertical{
+    top:0;
+    left: 0;
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.gridVerticalLine{
+    height: 100%;
+    border-right: 2px solid #f9f9f9;
+    margin-right: 15%;
+}
+.vLinePad{
+    height: 90%;
+}
+.squareWrapHorizontal{
+    padding-top: 10%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.gridHorizontalLine{
+    width: 80%;
+    border-top: 2px solid #f9f9f9;
+    margin-bottom: 15%;
+}
+.hLineX{
+    width: 85%;
+    border-top: 4px solid #f9f9f9;
+    transform: translateX(-90%);
+    margin-bottom: 5%;
+}
+.arrowIconContainer{
+    width: 120%;
+    border-top: 2px solid #f9f9f9;
+    text-align: right;
+    padding-top: 2rem;
+}
+.arrowIconContainer img:hover{
+    cursor: pointer;
+}
+
+.bannerHeading{
+    position: absolute;
+   top: 40%;
+   left: 25%;
+   transform: translate(-25%, -40%);
+}
+.bannerHeading h2{
+    font-size: 7.6rem ;
+    line-height: 90px;
+    color: #f9f9f9;
+}
+.offset{
+    transform: translateX(-60px);
+}
+.bannerText{
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    transform: translate(-15%, -10%);
+}
+.bannerText p{
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 2.2rem;
+    width: 45ch;
+}
+button{
+    padding: 1rem;
+    font-size:1.4rem;
+    background: #f9f9f9;
+    color: #1a1a18;
+}
+
+/* Works page css */
+
+
+.projectInfo{
+    height: 10%;
+    width: 100%;
+    /* background: rgb(255, 199, 199); */
+}
+.projectTop{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.projectBottom{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* background: rgb(228, 222, 220); */
+}
+.projectWrap{
+    height: 80%;
+    width: 20%;
+    background: #f9f9f9;
+    border-radius: 180px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* background: turquoise; */
+}
+.rotationImgContainer{
+    height: 80%;
+    width: 20%;
+    /* background: #f9f9f9; */
+    border-radius: 180px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: relative;
+    pointer-events: none;
+}
+.rotationImgContainer img{
+    position: absolute;
+    height: 90%;
+    filter: grayscale(100%);
+    transition: all 0.5s ease-out;
+}
+.rotationImg{
+    animation: rotation 60s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  /* .portraitImg{
+      z-index: 3;
+      height: 50px;
+      width: 50px;
+  } */
+  .noRotate{
+      height: 60%;
+      width: 60%;
+      position: absolute;
+      z-index: 3;
+   
+  }
+.projectWrap img{
+    position: absolute;
+    height: 90%;
+    filter: grayscale(100%);
+    transition: all 0.5s ease-out;
+}
+.projectWrap img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    transition: 0.25s;
+}
+
+/* end of works page css */
+
+/* master containers */
+.soundIllustrationMaster, .birdIllustrationMaster,.drawingMasterContainer, .beatMakerMaster{
+    width: 95vw;
+    height: 100vh;
+    display: flex;
+}
+.soundIllustrationMaster,.birdIllustrationMaster,.drawingMasterContainer,.beatMakerMaster{
+    display: none;
+}
+
+/* end of master containers */
+
+/* sound illustration css */
+
+
+.instructionsMaster{
+    width: 30%;
+    height: 100%;
+    background: #1a1a1a;
+    color: #f9f9f9;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    position: relative;
+}
+.instructionsMaster h2{
+    font-size: 2.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+.instructionsMaster input{
+    width: 20%;
+}
+.instructions{
+    margin-top: 60px;
+}
+
+.keyInstuctions{
+    display: flex;
+    margin-top: 20px;
+}
+.keyInstuctions div{
+    border: 1px solid #f9f9f9;
+    height: 4rem;
+    width: 4rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.keyInstuctions div p{
+    width: 1ch;
+    letter-spacing: 0;
+}
+
+
+
+/* css for illustration beats */
+
+.textContainer{
+    background: #f9f9f9;
+    color: #1a1a18;
+    width: 70%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+    position:relative;
+}
+
+.beat{
+    width: 70%;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.layerOne,.layerTwo, .layerThree,.layerFour,.layerFive, .layerSix,
+.layerSeven, .layerEight, .layerNine, .layerTen, .layerEleven, .layerTwelve,
+.layerThirteen, .layerFourteen, .layerfifteen{
+    height: 40rem;
+    position: absolute;
+}
+
+.layerOne{
+    z-index: 2; 
+}
+.layerTwo{
+    z-index: 3;
+}
+.layerThree{
+    z-index: 4;
+}
+.layerFour{
+    z-index: 5;
+}
+.layerFive{
+    z-index: 6;
+}
+.layerSix{
+    z-index: 7;
+}
+.layerSeven{
+    z-index: 8;
+}
+.layerEight, .layerNine, .layerTen{
+    z-index: 9;
+}
+
+.layerEleven{
+    z-index: 10;
+}
+.layerTwelve{
+    z-index: 11;
+}
+
+.layerThirteen{
+    z-index: 12;
+}
+
+.layerFourteen, .layerfifteen{
+    z-index: 13;
+}
+.padControls{
+    
+    position: absolute;
+    top:80%;
+    left: 50%;
+    transform: translate(-50%,-80%);
+    height: 10rem;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.illustrationPad{
+    color: #1a1a18;
+    display: flex;
+    padding-left: 3rem;
+    align-items: center;
+    height: 8rem;
+    width: 8rem;
+    box-shadow: 2px 2px 10px 0 rgba(0,0,0,.08),
+		-2px -2px 10px 0 rgba(255,255,255,1);
+}
+
+.pad p{
+    color: #1a1a18;
+    width: 1ch;
+    font-size: 22px;
+    opacity: 0.2;
+}
+
+/* end of css for Illustration beats */
+
+
+
+/* start of birds css */
+.birdIllustrationMaster p, .soundIllustrationMaster p, .beatMakerMaster p{
+    letter-spacing: 2px;
+    width: 45ch;
+}
+.birdContentsContainer{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('./img/birdBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f9f9f9;
+}
+#birdName{
+    margin-bottom: 22px;
+    letter-spacing: 2px;
+    font-size: 45px;
+    color: #1a1a18;
+}
+.birdChange{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+}
+#next:hover, #prev:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-timing-function: ease-out;
+}
+/* end of birds css */
+
+
+/* start of drawing css */
+
+.drawingInstructions h2{
+    margin-bottom: 1rem;
+    font-size: 2.9rem;
+}
+.drawingInstructions h3{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.drawingInstructions p{
+    width: 45ch;
+    letter-spacing: 2px;
+}
+.drawingInstructions button{
+    margin-bottom:1rem;
+}
+.drawingInstructions input{
+    margin: 0;
+    padding: 0;
+}
+.colors{
+    padding-top: 2rem;
+    margin-top: 20%;
+    border-top: 1px solid #f9f9f9;
+}
+.colors button{
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid #f9f9f9;
+    border-radius: 180px;
+    margin-right: 0.5rem;
+   
+}
+.colors button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.eraser{
+   margin-right: 0.5rem;
+}
+.brushControls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.brushControls h3{
+    margin-bottom: 0;
+}
+.brushSize{
+    border-bottom: 1px solid #f9f9f9;
+    padding-bottom: 2rem;
+}
+.brushSize input:hover{
+    cursor: pointer;
+}
+.drawingContainer{
+    width: 70%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#canvas{
+    background: #f9f9f9;
+    cursor: pointer;
+    height: 2000px;
+    width: 2000px;
+}
+.colors button:nth-of-type(1) {
+    background-color: #FCC4C9;
+}
+
+  .colors button:nth-of-type(2) {
+    background-color: #F8E2CF;
+  }
+  .colors button:nth-of-type(3) {
+    background-color: #F5C6AA;
+  }
+  .colors button:nth-of-type(4) {
+    background-color: #9BEEC1;
+  }
+  .colors button:nth-of-type(5) {
+    background-color: #FA376C;
+  }
+  .colors button:nth-of-type(6) {
+    background-color: #FFA286;
+  }
+  .colors button:nth-of-type(7) {
+    background-color: #88D9F3;
+  }
+  .colors button:nth-of-type(8) {
+    background-color: #1a1a18;
+  }
+  .colors button:nth-of-type(9) {
+    padding: 0;
+    border: 1px solid #1a1a18;
+    color: #1a1a18;
+    border-radius: 0px;
+    width: 20%;
+    transform: scale(1);
+  }
+  .colors button:nth-of-type(10) {
+    padding: 0;
+    border: 1px solid #1a1a18;
+    color: #1a1a18;
+    border-radius: 0px;
+    width: 20%;
+    transform: scale(1);
+  }
+  
+
+  #showWorksInfo{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 10%;
+      margin-bottom: 5%;
+  }
+  #showWorksInfo:hover{
+      cursor: pointer;
+  }
+
+/* beat maker css */
+i,
+svg {
+  pointer-events: none;
+}
+
+.beatContorlsMaster{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    background:#1a1a18;
+    color: #f9f9f9;
+  }
+  
+  .sequencerControls{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    width:35%;
+    height: 100%;
+    background: #1a1a18;
+  }
+  
+  .sequencerContainer{
+    background: #1a1a18;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    width: 100%;
+    height: 100%;
+    padding-left: 50px;
+  }
+  
+  .sequencer{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+  .kick-track,
+  .snare-track,
+  .hihatOpen-track,
+  .hihatClosed-track,
+  .clap-track,
+  .sampleOne-track {
+      width: 100%;
+      height: 3rem;
+      padding-top: 2rem;
+  }
+  
+  .kick,
+  .snare,
+  .hihatOpen,
+  .hihatClosed,
+  .clap,
+  .sampleOne{
+      margin: 0;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+  }
+  
+  
+  .kick-pad,
+  .snare-pad,
+  .hihatOpen-pad,
+  .hihatClosed-pad,
+  .clap-pad,
+  .sampleOne-pad {
+    width: 4rem;
+    height: 3rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  .kick-pad {
+    background: #FCD9DD;
+  }
+  .snare-pad {
+    background: #D8B8D7;
+  }
+  .hihatOpen-pad {
+    background: #BEDAFC;
+  }
+  .hihatClosed-pad{
+    background: #FFA1C7;
+  }
+  .clap-pad {
+    background: #FFA286;
+  }
+  .sampleOne-pad {
+    background: #F7FFA9;
+  }
+ 
+  
+  
+  .kick-pad.active {
+    background: #F9808F;
+  }
+  .snare-pad.active {
+    background: #CE63CC;
+  }
+  .hihatOpen-pad.active {
+    background: #3083FC;
+  }
+  .hihatClosed-pad.active{
+    background: #E80758;
+  }
+  .clap-pad.active {
+    background: #D83116;
+  }
+  .sampleOne-pad.active {
+    background: #B5BC1E;
+  }
+  
+  
+  
+  
+  
+  
+  
+  .controls {
+    /* height: 5rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .controls h1{
+    font-size: 1.8rem;
+    /* height: 1ch; */
+    width: 15ch;
+  }
+  .controls button {
+    padding: 10px;
+    border: none;
+    background: rgb(88, 88, 88);
+    color: white;
+    font-size: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  
+  .pad {
+    transition: all 0.5s ease;
+  }
+  
+  .play {
+    width: 30%;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background: rgb(88, 88, 88);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 3rem;
+  }
+  
+  select {
+    padding: 10px;
+    font-size: 14px; 
+    width: 20ch;
+  }
+  
+  .mute.active {
+    background: rgb(182, 182, 182);
+  }
+  
+  .tempo {
+    margin-top: 20px;
+    width: 50%;
+    padding-left: 1rem;
+  }
+  .tempo-slider {
+    padding: 0.2rem;
+    -webkit-appearance: none;
+    margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    background: rgb(88, 88, 88);
+    cursor: pointer;
+    border-radius: 1rem;
+  }
+  .tempo p {
+    font-size: 1.5rem;
+    margin: auto;
+    width: 15ch;
+    margin-top: 1rem;
+    align-self: center;
+    /* margin: 2rem; */
+    text-align: center;
+  }
+  
+  @keyframes playTrack {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+
+footer{
+    width: 100vw;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1a1a18;
+}
+    a {
+        color: #f9f9f9;
+        text-decoration: none;
+    }
+
+footer p{
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+/* end of beat maker css */

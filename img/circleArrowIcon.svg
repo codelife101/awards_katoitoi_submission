@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36.556" height="36.556" viewBox="0 0 36.556 36.556">
+  <g>
+    <g>
+      <line x1="18.565" y1="8.242" x2="18.565" y2="23.932" fill="#f9f9f9" stroke="#f9f9f9" stroke-miterlimit="10" stroke-width="3"/>
+      <polygon points="18.44 20.859 23.075 20.859 20.757 24.873 18.44 28.888 16.122 24.873 13.804 20.859 18.44 20.859" fill="#f9f9f9"/>
+    </g>
+    <circle cx="18.278" cy="18.278" r="17.778" fill="none" stroke="#f9f9f9" stroke-miterlimit="10"/>
+  </g>
+</svg>
