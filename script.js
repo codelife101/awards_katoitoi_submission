@@ -43,20 +43,6 @@ tl.to(".homeRightContainer h1",{transform: 'translateY(0px)',duration: 0.5});
 
 
 
-
-// tl.to(".square", {transform: 'scale(0)', duration: 1, delay:1});
-// tl.to(".square", {transform: 'scale(1)', duration: 1});
-// tl.to(".circle", {transform: 'scale(0)',duration: 1}, "-=0.1");
-// tl.to(".square", {transform: 'scale(0)', duration: 1});
-// tl.to(".circle", {transform: 'scale(1)',duration: 1});
-// tl.to(".square", {transform: 'scale(1)', duration: 1}, "-=1");
-// tl.to(".circle", {transform: 'scale(0)',duration: 1});
-// tl.to(".square", {transform: 'scale(0)', duration: 1}, "-=1");
-// tl.to("#loadingScreen", {display:'none'});
-// tl.to(".homeContentContainer",{display:'block'});
-// tl.to(".nav-header",{transform:'translateX(0px)'});
-// tl.to(".homeRightContainer h1",{transform: 'translateY(0px)',duration: 0.5});
-
 const nav = document.querySelector(".nav-header");
 const burger = document.querySelector('.burger');
 const viewWorks = document.querySelector('#viewWorks');
@@ -376,6 +362,9 @@ class DrumKit {
     constructor() {
       this.pads = document.querySelectorAll(".pad");
       this.playBtn = document.querySelector(".play");
+      this.stop = document.querySelector(".stopPlz");
+    
+    
   
       this.currentKick = "./sounds/Kick/808-Kick.wav";
       this.currentSnare = "./sounds/Snare/808-Snare.wav";
@@ -400,6 +389,7 @@ class DrumKit {
       this.muteBtns = document.querySelectorAll(".mute");
       this.tempoSlider = document.querySelector(".tempo-slider");
     }
+    
   
     
     activePad() {
@@ -470,7 +460,16 @@ class DrumKit {
         this.playBtn.innerText = "Play";
         this.playBtn.classList.remove("active");
       }
+
+
+
     }
+    
+
+   
+
+
+
     changeSound(e) {
       const selectionName = e.target.name;
       const selectionValue = e.target.value;
@@ -565,9 +564,7 @@ class DrumKit {
   }
   
   const drumKit = new DrumKit();
-  
-  //Event Listeners
-  
+
   drumKit.pads.forEach(pad => {
     pad.addEventListener("click", drumKit.activePad);
     pad.addEventListener("animationend", function() {
@@ -579,12 +576,19 @@ class DrumKit {
     drumKit.updateBtn();
     drumKit.start();
   });
+
+  
+
+ 
+
+ 
   
   drumKit.selects.forEach(select => {
     select.addEventListener("change", function(e) {
       drumKit.changeSound(e);
     });
   });
+  
   drumKit.muteBtns.forEach(btn => {
     btn.addEventListener("click", function(e) {
       drumKit.mute(e);
