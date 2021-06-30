@@ -847,14 +847,12 @@ svg {
   
   
   .controls {
-    /* height: 5rem; */
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .controls h1{
     font-size: 1.8rem;
-    /* height: 1ch; */
     width: 15ch;
   }
   .controls button {
@@ -1056,7 +1054,7 @@ footer p{
     
   }
 
-  @media only screen and (max-width: 1300px) {
+  @media only screen and (min-width: 1200px) and (max-width:1600px) {
     .overflow h1{
         font-size: 4.5rem;
     }
@@ -1064,6 +1062,74 @@ footer p{
         font-size: 4.5rem ;
         
     }
+
+    .controls {
+        height: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .controls h1{
+        font-size: 1.2rem;
+        padding-left: 2rem;
+        width: 15ch;
+      }
+      .controls button {
+        /* padding: 10px; */
+        border: none;
+        background: rgb(88, 88, 88);
+        color: white;
+        font-size: 1rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+      }
+      select {
+        padding: 10px;
+        font-size: 10px; 
+        width: 20ch;
+      }
+      .sequencer{
+        width: 80%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+      /* responsive music maker */
+      .kick-track,
+      .snare-track,
+      .hihatOpen-track,
+      .hihatClosed-track,
+      .clap-track,
+      .sampleOne-track {
+          width: 100%;
+          height: 3rem;
+          padding-top: 2rem;
+      }
+      
+      .kick,
+      .snare,
+      .hihatOpen,
+      .hihatClosed,
+      .clap,
+      .sampleOne{
+        width: 75%;
+      }
+      
+      
+      .kick-pad,
+      .snare-pad,
+      .hihatOpen-pad,
+      .hihatClosed-pad,
+      .clap-pad,
+      .sampleOne-pad {
+        width: 3.5rem;
+        height: 3rem;
+        margin-left: 1rem;
+        cursor: pointer;
+      }
    
     
   }
